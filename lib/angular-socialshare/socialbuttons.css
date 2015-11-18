@@ -1,0 +1,100 @@
+#view_item .socialbuttons a{
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+}
+#view_item .socialbuttons a:hover{
+    color:#fff;
+}
+#view_item .socialbuttons a span{
+    position: relative;
+    float: right;
+}
+.socialbuttons a {
+    position: relative;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Oswald';
+    display: inline-block;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    font-size: 16px;
+    padding: 3.5px 15px 0px 60px;
+    -webkit-transform: translate(0,0);
+    -moz-transform: translate(0,0);
+    transform: translate(0,0);
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -ms-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    transition: all .2s ease;
+    width: 200px;
+    height: 30px;
+    margin-top: 10px;
+    color: #fff;
+    cursor: pointer;
+}
+
+a.twitter-small,a.twitter-big {
+    -webkit-box-shadow: 0px 6px 0px #2695BC;
+    -moz-box-shadow: 0px 6px 0px #2695BC;
+    box-shadow: 0px 6px 0px #2695BC;
+    width: 200px;
+}
+
+a.twitter-small {
+    background: #2CA9E1 url("twitter.png") no-repeat center center;
+}
+
+a.twitter-big {
+    background: #2CA9E1;
+}
+
+a.twitter-small:active,a.twitter-big:active {
+    -webkit-box-shadow: 0px 2px 0px #2695BC;
+    -moz-box-shadow: 0px 2px 0px #2695BC;
+    box-shadow: 0px 2px 0px #2695BC;
+}
+
+a.twitter-big:before {
+    background: url("twitter.png") no-repeat center center;
+    content: "";
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 10px;
+    top: 6%;
+}
+
+a.facebook-small,a.facebook-big {
+    -webkit-box-shadow: 0px 6px 0px #293F63;
+    -moz-box-shadow: 0px 6px 0px #293F63;
+    box-shadow: 0px 6px 0px #293F63;
+    width: 200px;
+    margin-top: 10px;
+}
+
+a.facebook-small {
+    background: #3B5997 url("facebook.png") no-repeat center center;
+}
+
+a.facebook-big {
+    background: #3B5997;
+}
+
+a.facebook-small:active,a.facebook-big:active {
+    -webkit-box-shadow: 0px 2px 0px #293F63;
+    -moz-box-shadow: 0px 2px 0px #293F63;
+    box-shadow: 0px 2px 0px #293F63;
+}
+
+a.facebook-big:before {
+    background: url("facebook.png") no-repeat center center;
+    content: "";
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 10px;
+    top: 1%;
+}

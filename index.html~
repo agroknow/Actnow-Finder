@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
+  "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml" 
+  xml:lang="en" version="XHTML+RDFa 1.0" dir="ltr"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/terms/"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:og="http://ogp.me/ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:sioc="http://rdfs.org/sioc/ns#"
+  xmlns:sioct="http://rdfs.org/sioc/types#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+  xmlns:bibo="http://purl.org/ontology/bibo/"
+  xmlns:dcterms="http://purl.org/dc/terms/"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:rss="http://purl.org/rss/1.0/"
+  xmlns:site="http://msuglobalsandbox.com/ns#">
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon" />
+    <link href="http://fonts.googleapis.com/css?family=Signika" rel='stylesheet' type='text/css'>
+    <link rel="apple-touch-icon" href="assets/images/nhmc_icon.png"/>
+
+
+		<title>Act-now Finder</title>
+		<!-- INCLUDE REQUIRED THIRD PARTY LIBRARY JAVASCRIPT AND CSS -->
+		<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+		<meta name="viewport" content="width=device-width" />
+		<!-- define the base url -->
+		<!-- 	<base href="/Users/higher2fly/Agro-Know/projects_UX/gfsp/"> -->
+		<!-- 	<base href="greenlearningnetwork.com/gfsp/"> -->
+		<!-- get base url dynamically to avoid collisions between 'www.domain...' and 'domain...' -->
+		<script>
+	      document.write('<base href="' + document.location + '" />');
+		</script>
+
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'>
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet/less" type="text/css" href="css/style.less" />
+	<link rel="stylesheet/less" type="text/css" href="lib/angular-socialshare/socialbuttons.css" />
+
+	<!--AgroKnow CSS-->
+    <link rel="stylesheet" href="css/style-fskn-index.css" />
+    <link rel="stylesheet" href="css/layerslider.css" />
+    <!--end AK CSS-->
+
+    <!--Bootstrap CSS-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!--end Bootstrap CSS-->
+
+</head>
+
+<body ng-app="akListing" ng-cloak>
+
+		<div id="top1"></div>
+		<div id="top2">
+			<div class="row">
+			<div class="col-xs-6 col-sm-6 col-md-6 text-right">
+			<p class="page-title">
+				Food Security Knowledge Network
+			</p>
+			<p class="page-subtitle">
+				increasing food safety skills throughout the food value chain
+			</p>
+			</div>
+			<div class="col-xs-6 col-sm-6 col-md-6 text-center"></div>
+			</div>
+			<ul class="buttonalignment fa-cog" style="margin-top:0;">
+					<button type="button" class=""><li class="glyphicon glyphicon-home"><a href="http://greenlearningnetwork.org/actnow">&nbsp;Home</a></li></button>
+					<button type="button" class=""><li class="glyphicon glyphicon-book"><a href="http://greenlearningnetwork.org/actnow/about.html">&nbsp;About</a></li></button>
+					<button type="button" class=""><li class="glyphicon glyphicon-search"><a href="http://greenlearningnetwork.org/actnow/index.html#/educational/search/?q=*">&nbsp;Search</a></li></button>
+					<button type="button" class=""><li class="glyphicon glyphicon-new-window"><a href="http://act-now.eu" target="_blank">&nbsp;ACT Project</a></li></button>
+					<button type="button" class=""><li class="glyphicon glyphicon-user"><a href="http://greenlearningnetwork.org/actnow/contact.html">&nbsp;Contact</a></li></button>
+			</ul>
+		</div>
+		
+		<div id="wrap" ng-controller="mainController" ng-init="init_language()" >
+			<header ></header>
+
+			<div id="akListing" class="shadow"> 
+				<div id"navMenu" class="col-xs-12 col-sm-12 col-md-12 text-center">
+					
+			        <div ng-view></div>
+		    	</div>
+			</div>
+
+			<footer class="col-xs-12 col-sm-12 col-md-12 text-center">
+				<section id="slideshow-wrapper">
+					<div class="inner">
+						<div id="layerslider">
+							<div class="ls-layer">
+								<img class="ls-bg" src="assets/slideshow/FSKN_banner1.jpg" onclick="imageClick('')" alt="layer">
+	                        </div>
+							<div class="ls-layer">
+								<img class="ls-bg" src="assets/slideshow/FSKN_banner3.jpg" onclick="imageClick('')" alt="layer">
+	                        </div>
+						</div>
+					</div>
+				</section>
+				<section class="slider_block centered">
+	                <h2 class="centerheader"><span>Categories</span></h2>
+	                
+	                <div class="slider">
+	                    
+	                    <!-- root element for scrollable -->
+	                    <div class="scrollable" id="scrollable">
+	                        
+	                        <!-- root element for the items -->
+	                        <div class="items">                      
+	                            <div>
+	                                <a href="http://greenlearningnetwork.org/actnow/index.html#/educational/search/?q=*&providers=aglrfskn,aglrfaocdx,aglrfoodsafety&learningResourceTypes=course" class="safety">Find Courses</a>
+									<a href="http://aglr.agroknow.gr/organic-edunet/admin/users/login" target="_blank" class="oer">Describe your training solution</a>
+	                                <a href="http://greenlearningnetwork.org/actnow/index.html#/resources" class="profiles">Educational resources</a>
+	                                <a href="http://greenlearningnetwork.org/actnow/index.html#/educational/search/?q=*&providers=aglrfskn,aglrfaocdx,aglrfoodsafety&set=aglragrjobs" class="oer">Job Profiles</a>
+	                            </div>                            
+	                        </div>                        
+	                    </div>                  
+	                </div>                
+            	</section>
+			</footer>
+
+			<div class="row row2">
+				<h2 class="centerheader"><span>Supporters</span></h2><br/><br/>
+				<div class="col-xs-3 col-sm-3 col-md-3">
+					<img src="assets/images/AKlogo.png" alt="AK" style="width:109px;height:100px;">
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-3">
+					<img src="assets/images/act.png" alt="act" style="width:100px;height:100px;">
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-3">
+					<img src="assets/images/euco.jpg" alt="euco" style="width:144px;height:100px;">
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-3">
+					<img src="assets/images/fskn.png" alt="fskn" style="width:250px;height:49px;margin-top:25px;">
+				</div>
+			</div>
+		</div>
+		<div id="bg_supp">
+			
+		</div>
+		<div id="address_footer"><p class="aligncenter">&nbsp;</p></div>
+
+		<div id="super_footer">
+			<div class="row" style="text-align:center; margin-top:0; padding-top:35px;">
+				<div class="col-xs-3 col-sm-3 col-md-3">
+					<supafoota style="color:white; font-weight:bold;">About FSKN</supafoota>
+					<p style="text-align:justify; width:60%; margin-left:auto; margin-right:auto;  color:white;"><font size="1">Welcome to the Food Safety Knowledge Network (FSKN), a project of Michigan State University. FSKN’s goal is to help strengthen the food industry’s response to the complex food safety knowledge and training challenges that affect emerging markets by providing access to free learning resources.</font></p>
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-3">					
+					<supafoota style="font-weight:bold; color:white;">Sitemap</supafoota>
+					<table style="width:30%; text-align:center; margin-left:auto; margin-right:auto; font-weight:bold; color:white">
+  						<tr>
+							<td style="padding-bottom:5px;"><a href="#" class="one">Home</a></td>
+						</tr>						
+						<tr>
+						    <td style="padding-bottom:5px;"><a href="http://greenlearningnetwork.org/actnow/about.html" class="one">About</a></td>
+						</tr>
+						<tr>
+						    <td style="padding-bottom:5px;"><a href="http://greenlearningnetwork.org/actnow/index.html#/educational/search/?q=*" class="one">Search</a></td>
+						</tr>
+						<tr>
+						    <td style="padding-bottom:5px;"><a href="http://act-now.eu" target="_blank" class="one">Act-Now.EU</a></td>
+						</tr>
+						<tr>
+						    <td style="padding-bottom:5px;"><a href="http://greenlearningnetwork.org/actnow/contact.html" class="one">Contact</a></td>
+						</tr>
+					</table>
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-3">
+					<supafoota style="color:white; font-weight:bold;">Supporters</supafoota>
+					<table style="width:50%; text-align:center; margin-left:auto; margin-right:auto; color:white;">
+  						<tr>
+							<td style="padding-bottom:5px;">Supporter 1</td>
+						</tr>
+						<tr>
+						    <td style="padding-bottom:5px;">Supporter 2</td>
+						</tr>
+						<tr>
+						    <td style="padding-bottom:5px;">Supporter 3</td>
+						</tr>
+						<tr>
+						    <td style="padding-bottom:5px;">Supporter 4</td>
+						</tr>
+					</table>
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-3">
+					<supafoota style="color:white; font-weight:bold;">Latest Food Safety Tweets</supafoota>  
+    				<p><a class="twitter-timeline" href="https://twitter.com/search?q=foodsafety" data-widget-id="356885374301261824">Tweets about "foodsafety"</a></p>
+					<script> <!--//--><![CDATA[// ><!--
+					!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");//--><!]]>
+					</script>
+				</div>
+			</div>
+		</div>
+
+	<!-- ----------- -->
+	<!-- angular -->
+	<script type="text/javascript" src="lib/angular.min.js"></script>
+	<script type="text/javascript" src="lib/angular-route.min.js"></script>
+	<script type="text/javascript" src="lib/ui-bootstrap-0.10.0.min.js"></script>
+	<script type="text/javascript" src="lib/angular-socialshare/angular-socialshare.js"></script>
+	<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+
+	<!-- less -->
+	<script src="lib/less-1.5.0.min.js" type="text/javascript"></script>
+
+	<!-- app & controllers -->
+	<script type="text/javascript" src="app/app.js"></script>
+	<script type="text/javascript" src="app/controllers/mainController.js"></script>
+	<script type="text/javascript" src="app/controllers/search/listingController.js"></script>
+	<script type="text/javascript" src="app/controllers/search/paginationController.js"></script>
+	<script type="text/javascript" src="app/controllers/search/facetsController.js"></script>
+	<script type="text/javascript" src="app/controllers/view_item/viewItemController.js"></script>
+
+	<!-- JIRA BUGS REPORTING -->
+    <!-- <script type="text/javascript" src="https://agroknow.atlassian.net/s/d41d8cd98f00b204e9800998ecf8427e/en_US-95vtla/6322/8/1.4.11/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector.js?collectorId=7bdc0edb"></script> -->
+
+
+<script type="text/javascript">
+// Tiny object for getting counts
+var socialGetter = (function() {
+	/* just a utility to do the script injection */
+	function injectScript(url) {
+		var script = document.createElement('script');
+		script.async = true;
+		script.src = url;
+		document.head.appendChild(script);
+	}
+
+	return {
+		getTwitterCount: function(url, callbackName) {
+			injectScript('http://urls.api.twitter.com/1/urls/count.json?url=' + url.replace(/#/g,'%23') + '&callback=' + callbackName);
+		}
+	};
+})();
+// Callbacks to do something with the result
+function twitterCallback(result) {
+	jQuery('#twitterCount').text(result.count);
+}
+function tweetPopup(el) {
+	var via = '';
+    var height = ((window.outerHeight) /2) - 150;
+    var width = ((window.outerWidth)/2)  - 250;
+    if(jQuery(el).attr('data-via')) {
+    	via = '&via=' + jQuery(el).attr('data-via');
+    }
+    window.open('http://twitter.com/intent/tweet?text='+jQuery(el).attr('data-text')+'&url='+jQuery(el).attr('data-url').replace(/#/,'%23') + via, 'twitter', 'height=300,width=500,resizable=1,scrollbars=yes,top='+ height +',left='+width);
+    return false;
+}
+</script>
+</body>
+</html>
