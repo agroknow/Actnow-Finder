@@ -9,7 +9,6 @@
 //---
 
  listing.controller("listingController", function($rootScope, $routeParams, $scope, $http, $location, sharedProperties){
-
 	// variable to calculate the progress of http get request
 	$scope.http_get_prog = 37;
 

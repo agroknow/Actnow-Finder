@@ -13,7 +13,8 @@ listing.controller("viewItemController", function($rootScope, $scope, $http, $lo
 	language_mapping['en'] = "English";
 
 	/*AKIF URL*/
-	$scope.akif = 'http://api.greenlearningnetwork.com/search-api/v1/akif/';
+	//$scope.akif = 'http://api.greenlearningnetwork.com/search-api/v1/akif/';
+	$scope.akif = 'http://api.akstem.com/search-api/v1/akif/';
 	/* $scope.item_resource_id = ''; */
 	$scope.item_resource_url = '';
 
@@ -50,8 +51,10 @@ listing.controller("viewItemController", function($rootScope, $scope, $http, $lo
 			console.log(first_lang);
 
 			//WE USE 'EN' IF EXISTS
-			if (thisJson.languageBlocks[$scope.selectedLanguage] !== undefined) {
+			if (thisJson.languageBlocks[$scope.selectedLanguage] !== undefined && thisJson.languageBlocks[$scope.selectedLanguage].title !== undefined) {
 
+				//console.log('IN HERE!'+thisJson.languageBlocks[$scope.selectedLanguage]);
+				//console.log(thisJson.languageBlocks[$scope.selectedLanguage]);
 				//we take the languageBlock for 'en' from the specific json and add it in a variable.
 				languageBlock = thisJson.languageBlocks[$scope.selectedLanguage];
 
@@ -77,6 +80,8 @@ listing.controller("viewItemController", function($rootScope, $scope, $http, $lo
 				//title
 				if(languageBlock.title !== undefined) $scope.item_title = languageBlock.title;
 
+			//console.log('|'+$scope.item_title+'|');
+				
 				//description
 				if(languageBlock.description !== undefined) $scope.item_description = languageBlock.description //.split("||");
 
@@ -117,7 +122,12 @@ listing.controller("viewItemController", function($rootScope, $scope, $http, $lo
 					$scope.item_resource_types.push(thisJson.tokenBlock.learningResourceTypes[i]);
 				}
 			}
-			console.log($scope.item_resource_types);
+
+			//competences
+			$scope.item_competence = [];
+			if(thisJson.tokenBlock.taxonPaths !== undefined) {
+					$scope.item_competence.push(thisJson.tokenBlock.taxonPaths["PACT Competences"][0]);
+			}
 
 			//url
 			if(thisJson.expressions[0].manifestations[0].items[0].url != undefined) {
