@@ -24,6 +24,7 @@
             <li ng-show="item_language!=undefined" ><span class="labels">{{languages.language || 'Language' }}: </span> {{item_language}} </li>
             <li ng-show="item_coverage!=undefined" ><span class="labels">{{languages.location || 'Location' }}: </span> {{item_coverage}}</li>
             <li ng-show="item_resource_types.length > 0" ><span class="labels">{{languages.learningResourceTypes || 'Resource Type' }}: </span> <span class="comma" ng-repeat="types in item_resource_types">{{types}}<span class="comma" ng-show="$index != item_resource_types.length-1">, </span> </span></li>
+            <li ng-show="item_competence.length > 0" ><span class="labels">{{languages. || 'Competence' }}: </span> <span class="comma" ng-repeat="types in item_competence">{{types}}<span class="comma" ng-show="$index != item_competence.length-1">, </span> </span></li>
             <li ng-show="item_roles.length > 0" ><span class="labels">{{languages.key_audience || 'Key Audience' }}: </span> <span class="comma" ng-repeat="roles in item_roles"> {{roles}}<span ng-show="$index != item_roles.length-1">, </span> </span></li>
             <li ng-show="item_context.length > 0" ><span class="labels">{{languages.context || 'Context' }}: </span> <span class="comma" ng-repeat="context in item_context"> {{context}}<span ng-show="$index != item_context.length-1">, </span> </span></li>
             <li ng-show="item_rights!=undefined" ><span class="labels">{{languages.copyrights || 'Rights' }}: </span> <a href="{{item_rights}}" target=_blank > {{item_rights}}</a></li>
@@ -38,14 +39,14 @@
             <li class="glyphicon glyphicon-eye-open"></li>
             &nbsp;&nbsp;&nbsp;{{languages.access_the_resource || 'Access the resource' }}
          </a>
-         <!-- <ul class="socialbuttons">
+         <ul class="socialbuttons">
             <li>
-               <a facebook-feed-share class="facebookShare facebook-big" data-name="{{item_title}}" data-url="{{curr_url}}" data-shares='shares' data-description="{{item_abstract}}" data-picture="">{{ shares }}</a>
+               <a facebook-feed-share class="facebookShare facebook-big" data-name="{{item_title}}" data-url="{{curr_url}}" data-description="{{item_description}}" data-shares='shares'>{{ shares }}</a>
             </li>
             <li>
                <a class="twitter-big" onclick="tweetPopup(this);" href="javascript:void(0);" data-text="{{item_title + '-' + item_abstract | cut:true:130-curr_url.length:'...'}}" data-url="{{curr_url}}" data-via="">Tweet <span id="twitterCount"></span></a>
             </li>
-         </ul> -->
+         </ul>
       </div>
    </div>
 </div>
